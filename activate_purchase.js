@@ -1,4 +1,4 @@
-// v3.2
+// v3.1
 $("#activateNow").click(function () {
   var customerId = window.localStorage.getItem("customerId");
   var attVal = $("#attSelect").val();
@@ -67,12 +67,12 @@ $("#activateNow").click(function () {
                       .delay(3000)
                       .slideUp("slow");
                     $("#errorTxt").html(error.response.data.message);
-                    //Hide icons
+                    //Hide icons
                     $("#lottieStockSpin").hide();
                     $("#lottieInvoiceSpin").hide();
                     $("#lottieStockOk").hide();
                     $("#lottieInvoiceOk").hide();
-                    //Show icons and back button
+                    //Show icons and back button
                     $("#lottieStockWarn").show();
                     $("#lottieInvoiceWarn").show();
                     $("#backToCheckout").show();
@@ -101,7 +101,7 @@ $("#activateNow").click(function () {
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockOk").show();
                         $("#lottieInvoiceOk").show();
                         $("#payCoin").show();
@@ -109,11 +109,11 @@ $("#activateNow").click(function () {
                         $("#outcomeTxt").html(
                           "There was an issue. Stock was likely updated. Please update your quantity."
                         );
-                        //Hide icons
+                        //Hide icons
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockWarn").show();
                         $("#lottieInvoiceWarn").show();
                         $("#backBtn").show();
@@ -177,12 +177,12 @@ $("#activateNow").click(function () {
                       .slideUp("slow");
                     $("#errorTxt").html(error.response.data.message);
 
-                    //Hide icons
+                    //Hide icons
                     $("#lottieStockSpin").hide();
                     $("#lottieInvoiceSpin").hide();
                     $("#lottieStockOk").hide();
                     $("#lottieInvoiceOk").hide();
-                    //Show icons and back button
+                    //Show icons and back button
                     $("#lottieStockWarn").show();
                     $("#lottieInvoiceWarn").show();
                     $("#backToCheckout").show();
@@ -212,7 +212,7 @@ $("#activateNow").click(function () {
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockOk").show();
                         $("#lottieInvoiceOk").show();
                         $("#cardOptions").show();
@@ -220,11 +220,11 @@ $("#activateNow").click(function () {
                         $("#outcomeTxt").html(
                           "There was an issue. Stock was likely updated. Please update your quantity."
                         );
-                        //Hide icons
+                        //Hide icons
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockWarn").show();
                         $("#lottieInvoiceWarn").show();
                         $("#backBtn").show();
