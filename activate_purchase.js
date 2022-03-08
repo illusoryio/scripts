@@ -67,12 +67,12 @@ $("#activateNow").click(function () {
                       .delay(3000)
                       .slideUp("slow");
                     $("#errorTxt").html(error.response.data.message);
-                    //Hide icons
+                    //Hide icons
                     $("#lottieStockSpin").hide();
                     $("#lottieInvoiceSpin").hide();
                     $("#lottieStockOk").hide();
                     $("#lottieInvoiceOk").hide();
-                    //Show icons and back button
+                    //Show icons and back button
                     $("#lottieStockWarn").show();
                     $("#lottieInvoiceWarn").show();
                     $("#backToCheckout").show();
@@ -88,7 +88,7 @@ $("#activateNow").click(function () {
                           response.data.coinbase.response.result.data
                             .hosted_url;
                         window.localStorage.setItem("coinbaseUrl", coinbaseUrl);
-                        if (period == "/mo") {
+                        if (period == monthly) {
                           $("#outcomeTxt").html(
                             "Everything is ready! Would you like to save 20% with an annual subscription?"
                           );
@@ -101,7 +101,7 @@ $("#activateNow").click(function () {
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockOk").show();
                         $("#lottieInvoiceOk").show();
                         $("#payCoin").show();
@@ -109,11 +109,11 @@ $("#activateNow").click(function () {
                         $("#outcomeTxt").html(
                           "There was an issue. Stock was likely updated. Please update your quantity."
                         );
-                        //Hide icons
+                        //Hide icons
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockWarn").show();
                         $("#lottieInvoiceWarn").show();
                         $("#backBtn").show();
@@ -177,12 +177,12 @@ $("#activateNow").click(function () {
                       .slideUp("slow");
                     $("#errorTxt").html(error.response.data.message);
 
-                    //Hide icons
+                    //Hide icons
                     $("#lottieStockSpin").hide();
                     $("#lottieInvoiceSpin").hide();
                     $("#lottieStockOk").hide();
                     $("#lottieInvoiceOk").hide();
-                    //Show icons and back button
+                    //Show icons and back button
                     $("#lottieStockWarn").show();
                     $("#lottieInvoiceWarn").show();
                     $("#backToCheckout").show();
@@ -198,7 +198,7 @@ $("#activateNow").click(function () {
                         var session = response.data.session.response.result.id;
                         window.localStorage.setItem("stripeSession", session);
 
-                        if (period == "/mo") {
+                        if (period == monthly) {
                           $("#outcomeTxt").html(
                             "Everything is ready! Would you like to save 20% with an annual subscription?"
                           );
@@ -212,7 +212,7 @@ $("#activateNow").click(function () {
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockOk").show();
                         $("#lottieInvoiceOk").show();
                         $("#cardOptions").show();
@@ -220,11 +220,11 @@ $("#activateNow").click(function () {
                         $("#outcomeTxt").html(
                           "There was an issue. Stock was likely updated. Please update your quantity."
                         );
-                        //Hide icons
+                        //Hide icons
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockWarn").show();
                         $("#lottieInvoiceWarn").show();
                         $("#backBtn").show();
