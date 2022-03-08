@@ -1,3 +1,4 @@
+// v3
 $("#activateNow").click(function () {
   var customerId = window.localStorage.getItem("customerId");
   var attVal = $("#attSelect").val();
