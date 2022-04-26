@@ -1,4 +1,4 @@
-// v3.3
+// v3.4
 $("#activateNow").click(function () {
   var customerId = window.localStorage.getItem("customerId");
   var attVal = $("#attSelect").val();
@@ -33,9 +33,7 @@ $("#activateNow").click(function () {
       if (paymentMethod == "crypto") {
         var cancelUrl = "https://app.illusory.io/new";
         var successUrl = "https://app.illusory.io/crypto-success";
-        var endpoint = new URL(
-          "https://api.illusory.io/api:hZUbktAq/coinbase_add"
-        );
+        var endpoint = "https://api.illusory.io/api:hZUbktAq/coinbase_add";
 
         const getPricing = () => {
           return new Promise((resolve) => {
@@ -133,9 +131,7 @@ $("#activateNow").click(function () {
       } else {
         var cancelUrl = "https://app.illusory.io/new";
         var successUrl = "https://app.illusory.io/card-success";
-        var endpoint = new URL(
-          "https://api.illusory.io/api:UQuTJ3vx/session_add"
-        );
+        var endpoint = "https://api.illusory.io/api:UQuTJ3vx/session_add";
         var stripeNickname = $("#stripeNickname").val();
         var stripeProduct = $("#stripeProduct").val();
 
