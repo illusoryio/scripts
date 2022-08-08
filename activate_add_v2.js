@@ -1,4 +1,4 @@
-// v3.4
+// v3.5
 $("#activateNow").click(function () {
   var customerId = window.localStorage.getItem("customerId");
   var attVal = $("#attSelect").val();
@@ -33,7 +33,7 @@ $("#activateNow").click(function () {
       if (paymentMethod == "crypto") {
         var cancelUrl = "https://app.illusory.io/new";
         var successUrl = "https://app.illusory.io/crypto-success";
-        var endpoint = "https://api.illusory.io/api:hZUbktAq/coinbase_add";
+        var endpoint = "https://api.illusory.io/api:hZUbktAq/coinbase_add_v2";
 
         const getPricing = () => {
           return new Promise((resolve) => {
