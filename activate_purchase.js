@@ -1,10 +1,19 @@
-// v3.4
+// v4.101
 $("#activateNow").click(function () {
   var customerId = window.localStorage.getItem("customerId");
-  var attVal = $("#attSelect").val();
-  var verVal = $("#verSelect").val();
-  var tmoVal = $("#tmoSelect").val();
-  var bhw = $("#memberSelect").val();
+
+  var attVal_la = $("#attSelect_la").val();
+  var attVal_cle = $("#attSelect_cle").val();
+  var attVal = parseInt(attVal_la) + parseInt(attVal_cle)
+
+  var verVal_la = $("#verSelect_la").val();
+  var verVal_cle = $("#verSelect_cle").val();
+  var verVal = parseInt(verVal_la) + parseInt(verVal_cle) 
+
+  var tmoVal_la = $("#tmoSelect_la").val();
+  var tmoVal_cle = $("#tmoSelect_cle").val();
+  var tmoVal = parseInt(tmoVal_la) + parseInt(tmoVal_cle) 
+
   var bhwUsername = $("#memberUname").val();
   var period = $("#periodSelect").val();
   var price = $("#totalPrice").val();
@@ -46,6 +55,12 @@ $("#activateNow").click(function () {
                     attVal: attVal,
                     verVal: verVal,
                     tmoVal: tmoVal,
+                    attVal_cle: attVal_cle,
+                    verVal_cle: verVal_cle,
+                    tmoVal_cle: tmoVal_cle,
+                    attVal_la: attVal_la,
+                    verVal_la: verVal_la,
+                    tmoVal_la: tmoVal_la,
                     sum: sum,
                     bhw: bhw,
                     bhwUsername: bhwUsername,
@@ -65,12 +80,12 @@ $("#activateNow").click(function () {
                       .delay(3000)
                       .slideUp("slow");
                     $("#errorTxt").html(error.response.data.message);
-                    //Hide icons
+                    //Hide icons
                     $("#lottieStockSpin").hide();
                     $("#lottieInvoiceSpin").hide();
                     $("#lottieStockOk").hide();
                     $("#lottieInvoiceOk").hide();
-                    //Show icons and back button
+                    //Show icons and back button
                     $("#lottieStockWarn").show();
                     $("#lottieInvoiceWarn").show();
                     $("#backToCheckout").show();
@@ -85,21 +100,14 @@ $("#activateNow").click(function () {
                         var coinbaseUrl =
                           response.data.coinbase.response.result.data
                             .hosted_url;
-                        window.localStorage.setItem("coinbaseUrl", coinbaseUrl);
-                        if (period == "monthly") {
-                          $("#outcomeTxt").html(
-                            "Everything is ready! Would you like to save 20% with an annual subscription?"
-                          );
-                          $("#annual_btn").show();
-                        } else {
                           $("#outcomeTxt").html(
                             "Everything is ready! Please continue to purchase. Note: Products are deployed once payment clears."
                           );
-                        }
+
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockOk").show();
                         $("#lottieInvoiceOk").show();
                         $("#payCoin").show();
@@ -107,11 +115,11 @@ $("#activateNow").click(function () {
                         $("#outcomeTxt").html(
                           "There was an issue. Stock was likely updated. Please update your quantity."
                         );
-                        //Hide icons
+                        //Hide icons
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockWarn").show();
                         $("#lottieInvoiceWarn").show();
                         $("#backBtn").show();
@@ -131,7 +139,7 @@ $("#activateNow").click(function () {
       } else {
         var cancelUrl = "https://app.illusory.io/new";
         var successUrl = "https://app.illusory.io/card-success";
-        var endpoint = "https://api.illusory.io/api:UQuTJ3vx/session_add";
+        var endpoint = "https://api.illusory.io/api:UQuTJ3vx/session_add_v3";
         var stripeNickname = $("#stripeNickname").val();
         var stripeProduct = $("#stripeProduct").val();
 
@@ -146,6 +154,12 @@ $("#activateNow").click(function () {
                     attVal: attVal,
                     verVal: verVal,
                     tmoVal: tmoVal,
+                    attVal_cle: attVal_cle,
+                    verVal_cle: verVal_cle,
+                    tmoVal_cle: tmoVal_cle,
+                    attVal_la: attVal_la,
+                    verVal_la: verVal_la,
+                    tmoVal_la: tmoVal_la,
                     bhw: bhw,
                     sum: sum,
                     bhwUsername: bhwUsername,
@@ -173,12 +187,12 @@ $("#activateNow").click(function () {
                       .slideUp("slow");
                     $("#errorTxt").html(error.response.data.message);
 
-                    //Hide icons
+                    //Hide icons
                     $("#lottieStockSpin").hide();
                     $("#lottieInvoiceSpin").hide();
                     $("#lottieStockOk").hide();
                     $("#lottieInvoiceOk").hide();
-                    //Show icons and back button
+                    //Show icons and back button
                     $("#lottieStockWarn").show();
                     $("#lottieInvoiceWarn").show();
                     $("#backToCheckout").show();
@@ -194,21 +208,14 @@ $("#activateNow").click(function () {
                         var session = response.data.session.response.result.id;
                         window.localStorage.setItem("stripeSession", session);
 
-                        if (period == "monthly") {
-                          $("#outcomeTxt").html(
-                            "Everything is ready! Would you like to save 20% with an annual subscription?"
-                          );
-                          $("#annual_btn").show();
-                        } else {
-                          $("#outcomeTxt").html(
+                        $("#outcomeTxt").html(
                             "Everything is ready! Please continue to purchase. Note: Products are deployed once payment clears."
                           );
-                        }
 
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockOk").show();
                         $("#lottieInvoiceOk").show();
                         $("#cardOptions").show();
@@ -216,11 +223,11 @@ $("#activateNow").click(function () {
                         $("#outcomeTxt").html(
                           "There was an issue. Stock was likely updated. Please update your quantity."
                         );
-                        //Hide icons
+                        //Hide icons
                         $("#lottieStockSpin").hide();
                         $("#lottieInvoiceSpin").hide();
                         $("#lottieInvoiceSpin").hide();
-                        //Show icons and back button
+                        //Show icons and back button
                         $("#lottieStockWarn").show();
                         $("#lottieInvoiceWarn").show();
                         $("#backBtn").show();
