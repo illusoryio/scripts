@@ -13,7 +13,8 @@ $("#activateNow").click(function () {
   var tmoVal_la = $("#tmoSelect_la").val();
   var tmoVal_cle = $("#tmoSelect_cle").val();
   var tmoVal = parseInt(tmoVal_la) + parseInt(tmoVal_cle) 
-
+  
+  var bhw = $("#memberSelect").val();
   var bhwUsername = $("#memberUname").val();
   var period = $("#periodSelect").val();
   var price = $("#totalPrice").val();
