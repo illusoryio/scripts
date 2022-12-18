@@ -1,4 +1,4 @@
-// v4.103
+// v4.103 new
 $("#activateNow").click(function () {
   var customerId = window.localStorage.getItem("customerId");
 
