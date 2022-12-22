@@ -1,4 +1,4 @@
-// v4.103 new
+// v4.104
 $("#activateNow").click(function () {
   var customerId = window.localStorage.getItem("customerId");
 
@@ -33,7 +33,7 @@ $("#activateNow").click(function () {
       $("#lottieStockSpin").show();
       $("#lottieInvoiceSpin").show();
       $("#activationPageLoader").show();
-      $("#panelLoader").show();
+      $(".products-loader").show();
       var paymentMethod = $("#paySelect").val(); // If payment method == crypto, gen coinbase invoice // else line 65
 
       if (paymentMethod == "crypto") {
