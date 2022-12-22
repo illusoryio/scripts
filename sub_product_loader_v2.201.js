@@ -1,7 +1,7 @@
-// v2.201
+// v2.202
 
 $(document).ready(function () {
-  $("#productLoader").show();
+  $(".products-loader").show();
   var authToken = window.localStorage.getItem("token");
   var endpoint = "https://api.illusory.io/api:8YXVpa8D/sub/stock_v3";
   const getStock = () => {
@@ -249,7 +249,7 @@ $(document).ready(function () {
               } else {
                 // console.log("None");
               }
-              $("#productLoader").hide();
+              $(".products-loader").hide();
             }
           });
       });
