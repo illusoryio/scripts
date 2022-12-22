@@ -1,3 +1,5 @@
+// v2.201
+
 $(document).ready(function () {
   $("#productLoader").show();
   var authToken = window.localStorage.getItem("token");
@@ -23,6 +25,9 @@ $(document).ready(function () {
             } else {
               console.log(response);
               var payReq = response.data.payReq;
+              var activeAtt = response.data.activeAtt;
+              var activeVer = response.data.activeVer;
+              var activeTmo = response.data.activeTmo;
               var attStock_la = response.data.attStock_la;
               var verStock_la = response.data.verStock_la;
               var tmoStock_la = response.data.tmoStock_la;
@@ -118,7 +123,8 @@ $(document).ready(function () {
                   "background",
                   "linear-gradient(90deg, #0037bf, #0082ff) #181b26"
                 );
-                $("#attLineItemQuanity").html("x" + activeAtt_cle);
+                
+                $("#attLineItemQuanity").html("x" + activeAtt);
                 $("#attLineItem").show();
                 $("#attLineItemQuanity").show();
               } else {
@@ -191,7 +197,7 @@ $(document).ready(function () {
                   "background",
                   "linear-gradient(90deg, #0037bf, #0082ff) #181b26"
                 );
-                $("#attLineItemQuanity").html("x" + activeAtt_la);
+                $("#attLineItemQuanity").html("x" + activeAtt);
                 $("#attLineItem").show();
                 $("#attLineItemQuanity").show();
               } else {
