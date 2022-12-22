@@ -95,6 +95,7 @@ $("#activateNow").click(function () {
                         var coinbaseUrl =
                           response.data.coinbase.response.result.data
                             .hosted_url;
+                        window.localStorage.setItem("coinbaseUrl", coinbaseUrl);
                         $("#outcomeTxt").html(
                           "Everything is ready! Please continue to purchase. Note: Products are deployed once payment clears."
                         );
