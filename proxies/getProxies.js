@@ -1,6 +1,6 @@
 // v3.1
-async function getProxies() {
-    const { data, error } = await supabaseClient
+async function getProxies(supaClerk) {
+    const { data, error } = await supaClerk
         .from("proxies_restricted")
         .select()
         .order("proxy_name", { ascending: true });
